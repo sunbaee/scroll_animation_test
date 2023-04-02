@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@100;400&display=swap');
+
+:root {
+    --lblack: rgb(20, 20, 20);
+    --nwhite: rgb(235, 235, 235);
+    --ngray: rgb(206, 206, 206);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--lblack);
+    color: var(--nwhite);
+    overflow-x: hidden;
+    font-family: 'roboto', sans-serif;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+.structure {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.structure section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 2rem;
+}
+
+.structure section p, section h1, section h2 {
+    margin: .5rem 0;
+}
+
+.scroll-tracker {
+    position: fixed;
+    height: 100%;
+    width: .2rem; 
+    background: var(--ngray);
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    transform: translateX(-100%);
+    filter: blur(0.5rem);
+}
+
+.hidden:nth-child(1) {
+    transition-delay: 200ms;
+}
+
+.hidden:nth-child(2) {
+    transition-delay: 400ms;
+}
+
+.hidden:nth-child(3) {
+    transition-delay: 600ms;
+}
+
+.show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateX(0);
+    filter: blur(0);
+}
